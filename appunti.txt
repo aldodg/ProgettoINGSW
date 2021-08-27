@@ -1,0 +1,7 @@
+fai doc su overleaf che piace a starace
+
+come db usa postgresql che è gratis
+
+usa aws, in particolare lambda apigateway e db
+
+backend scritto in lambda
