@@ -1,0 +1,57 @@
+#id sarebbe id di un user
+
+create database cinemates;
+
+use cinemates;
+
+CREATE TABLE user (
+id INT NOT NULL AUTO_INCREMENT,
+username VARCHAR(45) NOT NULL,
+password VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL,
+#avatar ma è un poco un casino 
+PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+CREATE TABLE friendship (
+id1 INT NOT NULL,
+id2 INT NOT NULL,
+id_friendship INT NOT NULL AUTO_INCREMENT,
+state ENUM  ('pending' , 'accepted', 'rejected') NOT NULL,
+FOREIGN KEY (id1) REFERENCES user(id),
+FOREIGN KEY (id2) REFERENCES user(id),
+PRIMARY KEY (id_friendship));
+
+CREATE TABLE review (
+id INT NOT NULL,
+id_review INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(45) NOT NULL,
+body VARCHAR(500) NOT NULL,
+rating FLOAT NOT NULL,
+FOREIGN KEY (id) REFERENCES user(id),
+PRIMARY KEY (id_review));
+
+CREATE TABLE report (
+id_report INT NOT NULL AUTO_INCREMENT,
+id_review INT NOT NULL,
+FOREIGN KEY (id_review) REFERENCES review (id_review),
+PRIMARY KEY (id_report));
+
+CREATE TABLE notification (
+id_notification INT NOT NULL AUTO_INCREMENT,
+id INT NOT NULL,
+id_friendship INT NOT NULL,
+FOREIGN KEY (id_friendship) REFERENCES friendship (id_friendship),
+FOREIGN KEY (id) REFERENCES user (id),
+PRIMARY KEY (id_notification));
+
+CREATE TABLE list (
+id_list INT NOT NULL AUTO_INCREMENT,
+id INT NOT NULL,
+list_name VARCHAR(45) NOT NULL,
+FOREIGN KEY (id) REFERENCES user (id),
+PRIMARY KEY (id_list));
+
+
+
+
