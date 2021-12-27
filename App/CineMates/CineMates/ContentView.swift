@@ -2,15 +2,22 @@
 //  ContentView.swift
 //  CineMates
 //
-//  Created by Aldo Di Giovanni on 20/12/21.
+//  Created by Aldo Di Giovanni on 23/12/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            NavigationView { MovieHomeView() }
+            .tabItem { Label("Home", systemImage: "film")}
+            .tag(0)
+            
+            NavigationView { MovieSearchView() }
+            .tabItem { Label("Search", systemImage: "magnifyingglass")}
+            .tag(1)
+        }
     }
 }
 
