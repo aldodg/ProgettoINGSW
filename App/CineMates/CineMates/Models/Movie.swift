@@ -1,9 +1,9 @@
 //
 //  Movie.swift
-//  SwiftUIMovieDb
+//  CineMates
 //
-//  Created by Alfian Losari on 23/05/20.
-//  Copyright © 2020 Alfian Losari. All rights reserved.
+//  Created by Aldo Di Giovanni on 26/12/21.
+//  Copyright © 2021 Aldo Di Giovanni. All rights reserved.
 //
 
 import Foundation

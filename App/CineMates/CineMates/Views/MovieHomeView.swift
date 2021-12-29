@@ -29,7 +29,7 @@ struct MovieHomeView: View {
             retryAction: { loadMovies(invalidateCache: true) })
         )
         .listStyle(.plain)
-        .navigationTitle("XCA Movies")
+        .navigationTitle("CineMates")
     }
     
     @Sendable

@@ -15,8 +15,16 @@ struct ContentView: View {
             .tag(0)
             
             NavigationView { MovieSearchView() }
-            .tabItem { Label("Search", systemImage: "magnifyingglass")}
+            .tabItem { Label("Search Movies", systemImage: "magnifyingglass")}
             .tag(1)
+            
+            NavigationView { UserSearchView() }
+            .tabItem { Label("Search Users", systemImage: "person.2.circle.fill")}
+            .tag(2)
+            
+            NavigationView { ProfileView() }
+            .tabItem { Label("Profile", systemImage: "person.circle.fill")}
+            .tag(3)
         }
     }
 }
