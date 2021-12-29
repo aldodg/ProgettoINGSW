@@ -12,7 +12,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: RequestView()) {
+                NavigationLink(destination: FriendshipRequestView()) {
                     Text("Link Requests")
                         .padding()
                 }

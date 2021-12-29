@@ -10,35 +10,26 @@ import SwiftUI
 struct ItemRow: View {
     let item: MenuItem
     
-    let colors: [String: Color] = ["D": .purple, "G": .black, "N": .red, "S": .blue, "V": .green]
-    
     
     var body: some View {
-        HStack {
-            Image(uiImage: UIImage(named: item.thumbnailImage)!)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-            VStack(alignment: .leading) {
-                Text(item.name)
-                    .font(.headline)
-                Text("$\(item.price)")
+        
+        HStack{
+            
+            Text(item.name)
+                .font(.headline)
+                //.alignmentGuide(.leading) { d in d[.leading] }
+            
+            Button("Accept") {
+                print("Perform accept")
             }
             
-            Spacer()
-            
-            ForEach(item.restrictions, id: \.self) { restriction in
-                Text(restriction)
-                    .font(.caption)
-                    .fontWeight(.black)
-                    .padding(5)
-                    .background(colors[restriction, default: .black])
-                    .clipShape(Circle())
-                    .foregroundColor(.white)
-                
+            Button("Refuse", role: .destructive) {
+                print("Perform delete")
             }
         }
     }
 }
+
 
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {

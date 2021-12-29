@@ -1,9 +1,8 @@
 //
 //  Menu.swift
-//  iDine
+//  CineMates
 //
-//  Created by Paul Hudson on 27/06/2019.
-//  Copyright © 2019 Hacking with Swift. All rights reserved.
+//  Created by Aldo Di Giovanni on 29/12/21.
 //
 
 import SwiftUI
