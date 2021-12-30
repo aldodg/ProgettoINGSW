@@ -53,5 +53,6 @@ FOREIGN KEY (id) REFERENCES user (id),
 PRIMARY KEY (id_list));
 
 insert into user values ("1", "accr0", "psw", "accro997@gmail.com")
+insert into user(username, password, email) values ("ocram", "123", "marco@gmail.com")
 
 
