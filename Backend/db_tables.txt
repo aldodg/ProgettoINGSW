@@ -73,6 +73,7 @@ insert into friendship(id1, id2, state) values
 alter table list add movies text;
 
 insert into list (id, list_name, movies) values 
+("4", "preferiti", "313369, 152601, 4347"),
 ("1", "preferiti", "78, 164, 671");
 
 #non devo gestire admin quindi esempio in report inutile

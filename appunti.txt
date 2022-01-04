@@ -17,6 +17,6 @@ Se il file si chiama index.php se lo prende in automatico senza mettere index.ph
 
 Ricorda di cambiare gli script php per farli andare su aws: 
 Includere all'inizio il file .inc 
-E mettere nelle tabelle cinematesdb.NOMETABELLA
+E mettere negli script cinematesdb.NOMETABELLA
 
 ----------------------------------

@@ -1,18 +1,19 @@
 GET
 
-
-
-
-
-
-
-
-
-
-
-
+-utenti cercando per username: lista id utenti
+-utenti cercando per id utente: info utente, recensioni inserite, liste create
+-scheda film per titolo: scheda film //fatta
+-scheda film per id film: scheda film //fatta
+-review parsing by user id: review 
+-list parsing by user id: list
+-friendship requests parsing by user id: user id list
 
 
 --------------------------------------
 
 POST
+
+-signup
+-login
+-send friendship request
+-send review
