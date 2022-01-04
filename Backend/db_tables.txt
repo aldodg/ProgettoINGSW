@@ -68,7 +68,7 @@ insert into user(username, password, email) values
 insert into friendship(id1, id2, state) values 
 ("1", "4", "accepted"),
 ("2", "1", "pending"),
-("3", "1", "accepted")
+("3", "1", "accepted");
 
 alter table list add movies text;
 
