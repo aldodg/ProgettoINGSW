@@ -1,7 +1,22 @@
-fai doc su overleaf che piace a starace
+CARTELLA DOVE METTERE PHP SU AWS
 
-come db usa postgresql che è gratis
+cd ..
+cd ..
+cd var/www/html
 
-usa aws, in particolare lambda apigateway e db
 
-backend scritto in lambda
+----------------------------------
+
+CARTELLA DOVE METTERE PHP SU LOCALHOST
+
+Vai su xampp e poi open application folder, dopo HTDOCS
+
+Se il file si chiama index.php se lo prende in automatico senza mettere index.php nella barra, altrimenti serve il nomefile.php
+
+----------------------------------
+
+Ricorda di cambiare gli script php per farli andare su aws: 
+Includere all'inizio il file .inc 
+E mettere nelle tabelle cinematesdb.NOMETABELLA
+
+----------------------------------

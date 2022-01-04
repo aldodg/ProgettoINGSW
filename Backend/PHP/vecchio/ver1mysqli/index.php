@@ -1,11 +1,14 @@
+<?php include "../inc/dbinfo.inc"; ?>
+
 <?php
+
 echo "prima conness";
-/*
+
 // Create connection
 //$con = mysqli_connect("cinemates.c142z5ttzy4v.eu-west-3.rds.amazonaws.com","admin","cinematesdbpsw","cinemates");
 //$con = mysqli_connect("cinematesdb.ckta6hgliogm.us-east-2.rds.amazonaws.com","admin","cinematesdbpsw","cinematesdb");
-$con = mysqli_connect("localhost","admin","","cinemates");
-
+//$con = mysqli_connect("localhost","admin","","cinemates");
+$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 echo "dopo conness";
 // Check connection
 if (mysqli_connect_errno())
@@ -41,5 +44,5 @@ if ($result = mysqli_query($con, $sql))
 // Close connections
 mysqli_close($con);
 
-*/
+
 ?>
