@@ -20,3 +20,8 @@ Includere all'inizio il file .inc
 E mettere negli script cinematesdb.NOMETABELLA
 
 ----------------------------------
+
+ENDPOINT ESEMPIO API
+
+http://localhost/cinemates/getUser_username.php/info?username=accr0
+

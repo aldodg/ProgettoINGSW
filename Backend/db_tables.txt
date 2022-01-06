@@ -1,8 +1,8 @@
 #id sarebbe id di un user
 
-create database cinemates;
+create database cinematesdb;
 
-use cinemates;
+use cinematesdb;
 
 CREATE TABLE user (
 id INT NOT NULL AUTO_INCREMENT,
@@ -17,11 +17,12 @@ ENGINE = InnoDB;
 CREATE TABLE friendship (
 id1 INT NOT NULL,
 id2 INT NOT NULL,
-#id_friendship INT NOT NULL AUTO_INCREMENT,
-state ENUM  ('pending' , 'accepted', 'rejected') NOT NULL,
+id_friendship INT NOT NULL AUTO_INCREMENT,
+#blocked e' un nice to have, se ho tempo lo implemento
+state ENUM  ('pending' , 'accepted', 'blocked') NOT NULL,
 FOREIGN KEY (id1) REFERENCES user(id),
 FOREIGN KEY (id2) REFERENCES user(id),
-PRIMARY KEY (id1, id2));
+PRIMARY KEY (id_friendship));
 
 CREATE TABLE review (
 id INT NOT NULL,
@@ -64,7 +65,7 @@ insert into user(username, password, email) values
 ("emilia", "e.punto", "emilia@icloud.com"),
 ("edo", "eddoardo", "edo@alice.it");
 
-#amico con Emilia e lucia, richiesta da ocram
+#amico con Emilia e lucia, richiesta da ocram per accr0
 insert into friendship(id1, id2, state) values 
 ("1", "4", "accepted"),
 ("2", "1", "pending"),
