@@ -13,7 +13,6 @@ struct FriendshipRequestView: View {
     let request_list = Bundle.main.decode([MenuSection].self, from: "menu.json")
     
     var body: some View {
-        NavigationView {
             List {
                 ForEach(request_list) { section in
                     ForEach(section.items) { item in
@@ -25,7 +24,6 @@ struct FriendshipRequestView: View {
             }
             .navigationTitle("Link Requests")
             .listStyle(.grouped)
-        }
     }
 }
 
