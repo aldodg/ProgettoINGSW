@@ -145,6 +145,30 @@
 			path = TMDB;
 			sourceTree = "<group>";
 		};
+		568E1BEE27886E830081F50B /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				568E1BDD277C867B0081F50B /* Helper.swift */,
+				8B755F0D247936D300FD58C8 /* AppDelegate.swift */,
+				8B755F0F247936D300FD58C8 /* SceneDelegate.swift */,
+				8B755F292479390E00FD58C8 /* Utils.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		568E1BEF27886EB30081F50B /* Movie-TMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8B755F3C2479524600FD58C8 /* MovieThumbnailView.swift */,
+				8B755F3E247956D000FD58C8 /* MovieThumbnailCarouselView.swift */,
+				8B755F4024796A7A00FD58C8 /* MovieHomeView.swift */,
+				8B755F4724796B8200FD58C8 /* LoadingView.swift */,
+				8BE793F52479FD1000850C45 /* MovieDetailView.swift */,
+				8BF4147C247A37A800F5BE68 /* MovieSearchView.swift */,
+			);
+			path = "Movie-TMDB";
+			sourceTree = "<group>";
+		};
 		8B755F01247936D300FD58C8 = {
 			isa = PBXGroup;
 			children = (
@@ -164,10 +188,7 @@
 		8B755F0C247936D300FD58C8 /* CineMates */ = {
 			isa = PBXGroup;
 			children = (
-				568E1BDD277C867B0081F50B /* Helper.swift */,
-				8B755F0D247936D300FD58C8 /* AppDelegate.swift */,
-				8B755F0F247936D300FD58C8 /* SceneDelegate.swift */,
-				8B755F292479390E00FD58C8 /* Utils.swift */,
+				568E1BEE27886E830081F50B /* Others */,
 				8B755F372479460500FD58C8 /* Bindings */,
 				8B755F34247945E300FD58C8 /* Views */,
 				8B755F2D24793C0000FD58C8 /* Resources */,
@@ -227,15 +248,10 @@
 		8B755F34247945E300FD58C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				568E1BEF27886EB30081F50B /* Movie-TMDB */,
 				568E1BC1277B58A40081F50B /* ProfileViews */,
 				8BF90B60272E43BE001E978D /* Overlay Views */,
 				8B755F4424796B2900FD58C8 /* UIKitViews */,
-				8B755F3C2479524600FD58C8 /* MovieThumbnailView.swift */,
-				8B755F3E247956D000FD58C8 /* MovieThumbnailCarouselView.swift */,
-				8B755F4024796A7A00FD58C8 /* MovieHomeView.swift */,
-				8B755F4724796B8200FD58C8 /* LoadingView.swift */,
-				8BE793F52479FD1000850C45 /* MovieDetailView.swift */,
-				8BF4147C247A37A800F5BE68 /* MovieSearchView.swift */,
 				568E1BBD277A91420081F50B /* UserSearchView.swift */,
 			);
 			path = Views;

@@ -1,9 +1,8 @@
 //
 //  ItemRow.swift
-//  iDine
+//  CineMates
 //
-//  Created by Анастасия Скорюкова on 20/10/21.
-//
+//  Created by Aldo Di Giovanni on 28/12/21.
 
 import SwiftUI
 
