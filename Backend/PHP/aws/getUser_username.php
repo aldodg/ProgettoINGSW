@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
 	$username = isset($_GET['username']) ? mysqli_real_escape_string($conn, $_GET['username']) :  "";
 	$sql = "SELECT * FROM cinematesdb.user WHERE username='{$username}';";

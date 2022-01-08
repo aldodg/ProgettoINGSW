@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 /*questa api viene chiamata quando sto nella view delle richieste e quindi tengo già l'id_friendship preso dall'api get.
 mi serve solo sapere l'azione:
  1) accettata: cambia state

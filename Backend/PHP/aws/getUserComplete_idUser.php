@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 	$id = isset($_GET['id']) ? mysqli_real_escape_string($conn, $_GET['id']) :  "";
 	$sql = "SELECT * from cinematesdb.user join cinematesdb.list on user.id = list.id join cinematesdb.review on user.id = review.id where user.id = '$id';";
 	$get_data_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));

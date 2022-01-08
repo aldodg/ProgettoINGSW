@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 	/* id1 e' l'id dell'utente che invia la richiesta di amicizia a quello
 	che ha id2; la query devo quindi farla su id2 dandogli l'id di colui che sta
 	vedendo quali richieste di amicizia gli sono arrivate*/

@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    @State var infos = [Info]()
+    
     var body: some View {
-        Text("Hello, World!L")
+        
+        Text("Hello, world!")
+            .padding()
+            .onAppear() {
+                Api().loadData { (list) in
+                    self.infos = list.info
+                }
+            }.navigationTitle("Lists")
     }
 }
 

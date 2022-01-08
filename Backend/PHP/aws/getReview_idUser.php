@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
 	$id = isset($_GET['id']) ? mysqli_real_escape_string($conn, $_GET['id']) :  "";
 	$sql = "SELECT * FROM cinematesdb.review WHERE id='{$id}';";

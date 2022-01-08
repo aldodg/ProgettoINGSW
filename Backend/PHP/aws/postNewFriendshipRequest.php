@@ -2,7 +2,7 @@
 
 <?php
 
-$con = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	// Get data from the REST client
 	$id1 = isset($_POST['id1']) ? mysqli_real_escape_string($conn, $_POST['id1']) : "";
