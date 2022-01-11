@@ -10,11 +10,11 @@ import Foundation
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-  
-struct Welcome: Codable {
+  /*
+struct UserMovieListResponse: Codable {
     let status: Int
     let info: [Info]
-}
+}*/
 
 func newJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
@@ -44,7 +44,7 @@ extension URLSession {
         }
     }
 
-    func welcomeTask(with url: URL, completionHandler: @escaping (Welcome?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+    func UserMovieListResponseTask(with url: URL, completionHandler: @escaping (UserMovieListResponse?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         return self.codableTask(with: url, completionHandler: completionHandler)
     }
 }
@@ -52,30 +52,39 @@ extension URLSession {
 
 
 // MARK: - List
-struct MovieList: Codable {
+struct UserMovieListResponse: Codable {
     let status: Int
-    let info: [Info]
+    let movieLists: [MovieList]
     init() {
         status = 1
-        info = []
+        movieLists = []
     }
+    enum CodingKeys: String, CodingKey {
+            case status
+            case movieLists = "info"
+        }
 }
 // MARK: - Info
-struct Info: Codable {
-    let id, idList, listName, movies: String
+struct MovieList: Codable,Identifiable {
+    let userID, id, listName: String
+        let movies: [MovieID]
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case idList = "id_list"
-        case listName = "list_name"
-        case movies
-    }
+        enum CodingKeys: String, CodingKey {
+            case userID = "id"
+            case id = "id_list"
+            case listName = "list_name"
+            case movies
+        }
+}
+
+struct MovieID: Codable,Identifiable {
+    let id: String
 }
 
 class Api : ObservableObject{
-    @Published var list = MovieList()
+    @Published var list = UserMovieListResponse()
     
-    func loadData(completion:@escaping (MovieList) -> ()) {
+    func loadData(completion:@escaping (UserMovieListResponse) -> ()) {
         guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=1")
         //guard let url = URL(string: "http://localhost/cinemates/getList_idUser.php/info?id=1")
         else {
@@ -83,7 +92,7 @@ class Api : ObservableObject{
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            self.list = try! JSONDecoder().decode(MovieList.self, from: data!)
+            self.list = try! JSONDecoder().decode(UserMovieListResponse.self, from: data!)
             print(self.list)
             DispatchQueue.main.async {
                 completion(self.list)

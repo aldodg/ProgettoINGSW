@@ -10,15 +10,24 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var infos = [Info]()
-    
+    @State var userLists = [MovieList]()
+
     var body: some View {
-        
-        Text("Hello, world!")
+        ForEach(self.userLists) { userList in
+                        NavigationLink(destination: FriendshipRequestView()){
+                            Text(userList.listName)
+                        }
+                        ForEach(userList.movies) { movie in
+                            Text(movie.id)
+                        }
+                    }
+
+                        
+        Text("infos")
             .padding()
             .onAppear() {
                 Api().loadData { (list) in
-                    self.infos = list.info
+                    self.userLists = list.movieLists
                 }
             }.navigationTitle("Lists")
     }

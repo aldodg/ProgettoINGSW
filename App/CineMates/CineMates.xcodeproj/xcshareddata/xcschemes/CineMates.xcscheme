@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B755F09247936D300FD58C8"
-               BuildableName = "CineMates.app"
+               BuildableName = "Cinemates.app"
                BlueprintName = "Cinemates"
-               ReferencedContainer = "container:CineMates.xcodeproj">
+               ReferencedContainer = "container:Cinemates.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B755F09247936D300FD58C8"
-            BuildableName = "CineMates.app"
+            BuildableName = "Cinemates.app"
             BlueprintName = "Cinemates"
-            ReferencedContainer = "container:CineMates.xcodeproj">
+            ReferencedContainer = "container:Cinemates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B755F09247936D300FD58C8"
-            BuildableName = "CineMates.app"
+            BuildableName = "Cinemates.app"
             BlueprintName = "Cinemates"
-            ReferencedContainer = "container:CineMates.xcodeproj">
+            ReferencedContainer = "container:Cinemates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

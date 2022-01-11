@@ -35,6 +35,9 @@ struct Informations: Codable, Identifiable {
         case idMovie = "id_movie"
     }
 }
+
+
+
 class Loader: ObservableObject {
     
 //    @Published var list = List()
