@@ -14,19 +14,17 @@ struct ProfileView: View {
             VStack {
                 NavigationLink(destination: FriendshipRequestView()) {
                     Text("Link Requests")
-                        .padding()
+                        .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                 }
-                //.navigationTitle("Profile Page")
                 
                 NavigationLink(destination: ListView()) {
                     Text("My Lists")
-                        .padding()
+                        .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                 }
-                //.navigationTitle("Profile Page")
                 
                 NavigationLink(destination: ReviewView()) {
                     Text("My Reviews")
-                        .padding()
+                        .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                 }
                 .navigationTitle("Profile Page")
                 

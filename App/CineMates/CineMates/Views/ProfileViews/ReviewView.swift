@@ -9,8 +9,18 @@
 import SwiftUI
 
 struct ReviewView: View {
+    
+    //@State var infosR = [InfoReview]()
+    
     var body: some View {
-        Text("Hello, World!R")
+        
+        Text("Hello, world!")
+//            .padding()
+//            .onAppear() {
+//                ApiReview().loadDataReview { (list) in
+//                    self.infosR = list.info
+//                }
+//            }.navigationTitle("Lists")
     }
 }
 

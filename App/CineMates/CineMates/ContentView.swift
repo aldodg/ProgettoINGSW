@@ -22,7 +22,7 @@ struct ContentView: View {
             .tabItem { Label("Search Users", systemImage: "person.2.circle.fill")}
             .tag(2)
             
-            NavigationView { ProfileView() }
+            ProfileView()
             .tabItem { Label("Profile", systemImage: "person.circle.fill")}
             .tag(3)
         }

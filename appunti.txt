@@ -23,3 +23,13 @@ ENDPOINT ESEMPIO API
 
 http://localhost/cinemates/getUser_username.php/info?username=accr0
 
+http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=1
+
+http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_username.php/info?username=accr0
+
+http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getReview_idUser.php/info?id=1
+
+http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getFriendshipRequest_idUser.php/info?id=1
+
+http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUserComplete_idUser.php/info?id=1
+
