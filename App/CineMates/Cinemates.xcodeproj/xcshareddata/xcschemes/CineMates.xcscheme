@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B755F09247936D300FD58C8"
                BuildableName = "CineMates.app"
-               BlueprintName = "CineMates"
+               BlueprintName = "Cinemates"
                ReferencedContainer = "container:CineMates.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B755F09247936D300FD58C8"
             BuildableName = "CineMates.app"
-            BlueprintName = "CineMates"
+            BlueprintName = "Cinemates"
             ReferencedContainer = "container:CineMates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -63,7 +63,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B755F09247936D300FD58C8"
             BuildableName = "CineMates.app"
-            BlueprintName = "CineMates"
+            BlueprintName = "Cinemates"
             ReferencedContainer = "container:CineMates.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

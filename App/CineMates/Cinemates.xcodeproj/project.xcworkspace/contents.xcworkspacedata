@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SwiftUIMovieDb.xcodeproj">
+      location = "self:/Users/aldodg/Documents/GitHub/ProgettoINGSW/App/CineMates/Cinemates.xcodeproj">
    </FileRef>
 </Workspace>

@@ -73,7 +73,7 @@
 		568E1BE72787BFDC0081F50B /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		568E1BE92787C0160081F50B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		568E1BEB2787C0640081F50B /* UserByUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserByUsername.swift; sourceTree = "<group>"; };
-		8B755F0A247936D300FD58C8 /* CineMates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CineMates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B755F0A247936D300FD58C8 /* Cinemates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B755F0D247936D300FD58C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B755F0F247936D300FD58C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8B755F11247936D300FD58C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		8B755F0B247936D300FD58C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B755F0A247936D300FD58C8 /* CineMates.app */,
+				8B755F0A247936D300FD58C8 /* Cinemates.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,9 +292,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B755F09247936D300FD58C8 /* CineMates */ = {
+		8B755F09247936D300FD58C8 /* Cinemates */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B755F1E247936D400FD58C8 /* Build configuration list for PBXNativeTarget "CineMates" */;
+			buildConfigurationList = 8B755F1E247936D400FD58C8 /* Build configuration list for PBXNativeTarget "Cinemates" */;
 			buildPhases = (
 				8B755F06247936D300FD58C8 /* Sources */,
 				8B755F07247936D300FD58C8 /* Frameworks */,
@@ -304,9 +304,9 @@
 			);
 			dependencies = (
 			);
-			name = CineMates;
+			name = Cinemates;
 			productName = SwiftUIMovieDb;
-			productReference = 8B755F0A247936D300FD58C8 /* CineMates.app */;
+			productReference = 8B755F0A247936D300FD58C8 /* Cinemates.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -324,7 +324,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8B755F05247936D300FD58C8 /* Build configuration list for PBXProject "CineMates" */;
+			buildConfigurationList = 8B755F05247936D300FD58C8 /* Build configuration list for PBXProject "Cinemates" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -337,7 +337,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B755F09247936D300FD58C8 /* CineMates */,
+				8B755F09247936D300FD58C8 /* Cinemates */,
 			);
 		};
 /* End PBXProject section */
@@ -581,7 +581,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B755F05247936D300FD58C8 /* Build configuration list for PBXProject "CineMates" */ = {
+		8B755F05247936D300FD58C8 /* Build configuration list for PBXProject "Cinemates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B755F1C247936D400FD58C8 /* Debug */,
@@ -590,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B755F1E247936D400FD58C8 /* Build configuration list for PBXNativeTarget "CineMates" */ = {
+		8B755F1E247936D400FD58C8 /* Build configuration list for PBXNativeTarget "Cinemates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B755F1F247936D400FD58C8 /* Debug */,
