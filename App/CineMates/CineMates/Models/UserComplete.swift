@@ -8,7 +8,7 @@
 //
 import Foundation
 
-
+//MEGLIO USARE LE PICCOLE, QUESTA DOVREBBE ESSERE PROFONDAMENTE CAMBIATA INSIEME ALL'API
 struct Query: Codable {
     let results: [Informations]
     
