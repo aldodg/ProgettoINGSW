@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		560A5E8B278E616B00EF3FF5 /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5E8A278E616B00EF3FF5 /* DetailListView.swift */; };
+		560A5E8D278E83E600EF3FF5 /* DetailReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5E8C278E83E600EF3FF5 /* DetailReviewView.swift */; };
 		568E1BBE277A91420081F50B /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BBD277A91420081F50B /* UserSearchView.swift */; };
 		568E1BC0277A93220081F50B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BBF277A93220081F50B /* ProfileView.swift */; };
 		568E1BD4277BCC680081F50B /* FriendshipRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BD3277BCC680081F50B /* FriendshipRequestView.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		560A5E8A278E616B00EF3FF5 /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
+		560A5E8C278E83E600EF3FF5 /* DetailReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReviewView.swift; sourceTree = "<group>"; };
 		568E1BBD277A91420081F50B /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		568E1BBF277A93220081F50B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		568E1BD3277BCC680081F50B /* FriendshipRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendshipRequestView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				568E1BD5277BDB890081F50B /* ListView.swift */,
 				560A5E8A278E616B00EF3FF5 /* DetailListView.swift */,
 				568E1BD7277BDBB40081F50B /* ReviewView.swift */,
+				560A5E8C278E83E600EF3FF5 /* DetailReviewView.swift */,
 			);
 			path = ProfileViews;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				8BF4147F247A37CA00F5BE68 /* SearchBar.swift in Sources */,
 				8B755F392479460E00FD58C8 /* ImageLoader.swift in Sources */,
 				8BF90B62272E43E9001E978D /* RetryView.swift in Sources */,
+				560A5E8D278E83E600EF3FF5 /* DetailReviewView.swift in Sources */,
 				568E1BE82787BFDC0081F50B /* MovieList.swift in Sources */,
 				8B755F232479370E00FD58C8 /* Movie.swift in Sources */,
 				8B755F2A2479390E00FD58C8 /* Utils.swift in Sources */,

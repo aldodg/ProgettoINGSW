@@ -81,7 +81,7 @@ struct MovieID: Codable,Identifiable {
     let id: String
 }
 
-class Api : ObservableObject{
+class ApiList : ObservableObject{
     @Published var list = UserMovieListResponse()
     
     func loadData(completion:@escaping (UserMovieListResponse) -> ()) {

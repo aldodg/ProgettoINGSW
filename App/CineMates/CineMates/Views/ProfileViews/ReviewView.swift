@@ -10,17 +10,24 @@ import SwiftUI
 
 struct ReviewView: View {
     
-    //@State var infosR = [InfoReview]()
+    @State var reviewLists = [ReviewList]()
     
     var body: some View {
+        ForEach(self.reviewLists) { reviewList in
+            NavigationLink(destination: DetailReviewView(reviewList: reviewList)){
+                //qua mettere titolo film con api relativa(?)
+                Text(reviewList.title)
+            }
+        }
         
-        Text("Hello, world!")
-//            .padding()
-//            .onAppear() {
-//                ApiReview().loadDataReview { (list) in
-//                    self.infosR = list.info
-//                }
-//            }.navigationTitle("Lists")
+        
+        Text("")
+            .padding()
+            .onAppear() {
+                ApiReview().loadDataReview { (list) in
+                    self.reviewLists = list.reviewLists
+                }
+            }.navigationTitle("Reviews")
     }
 }
 

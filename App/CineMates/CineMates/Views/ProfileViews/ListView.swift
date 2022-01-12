@@ -23,7 +23,7 @@ struct ListView: View {
         Text("")
             .padding()
             .onAppear() {
-                Api().loadData { (list) in
+                ApiList().loadData { (list) in
                     self.userLists = list.movieLists
                 }
             }.navigationTitle("Lists")
