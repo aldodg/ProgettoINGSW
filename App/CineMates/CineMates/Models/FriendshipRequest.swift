@@ -49,8 +49,8 @@ struct FriendshipRequest: Codable, Identifiable {
 class ApiFriendshipRequest : ObservableObject{
     @Published var request = RequestResponse()
     
-    func loadDataRequest(completion:@escaping (RequestResponse) -> ()) {
-        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getFriendshipRequest_idUser.php/info?id=1")
+    func loadDataRequest(num: String, completion:@escaping (RequestResponse) -> ()) {
+        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getFriendshipRequest_idUser.php/info?id=\(num)")
         else {
             print("Invalid url...")
             return

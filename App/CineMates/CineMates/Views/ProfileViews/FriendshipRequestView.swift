@@ -12,6 +12,9 @@ import SwiftUI
 struct FriendshipRequestView: View {
     @State var friendshipRequests = [FriendshipRequest]()
     
+    let num = "1"
+    //questo num e' ovviamente d'esempio, e' l'id dell'utente che chiama la funzione
+    
     var body: some View {
         ForEach(self.friendshipRequests) { request in
             NavigationLink(destination: UserCompleteView(request: request.id)){
@@ -23,7 +26,7 @@ struct FriendshipRequestView: View {
         Text("")
             .padding()
             .onAppear() {
-                ApiFriendshipRequest().loadDataRequest { (list) in
+                ApiFriendshipRequest().loadDataRequest(num: num) { (list) in
                     self.friendshipRequests = list.friendshipRequests
                 }
             }.navigationTitle("Friendship Requests")

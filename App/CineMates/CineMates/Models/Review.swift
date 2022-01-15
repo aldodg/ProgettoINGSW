@@ -68,8 +68,8 @@ struct ReviewList: Codable, Identifiable {
 class ApiReview : ObservableObject{
     @Published var review = ReviewResponse()
     
-    func loadDataReview(completion:@escaping (ReviewResponse) -> ()) {
-        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getReview_idUser.php/info?id=1")
+    func loadDataReview(num: String, completion:@escaping (ReviewResponse) -> ()) {
+        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getReview_idUser.php/info?id=\(num)")
         //guard let url = URL(string: "http://localhost/cinemates/getList_idUser.php/info?id=1")
         else {
             print("Invalid url...")

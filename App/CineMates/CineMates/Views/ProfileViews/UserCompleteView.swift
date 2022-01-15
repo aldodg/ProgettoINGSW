@@ -16,7 +16,8 @@ import SwiftUI
 
 struct UserCompleteView: View {
     let request: String
-//    let personID: PersonResults
+
+    @State var userInfo = [Person]()
     
     //request qua sopra indica l'utente che ci ha mandato la richiesta di amicizia che stiamo prendendo in considerazione
     //e' in pratica la chiave id1 della tabella sul db, perche' e' pensato come id1 manda richiesta a id2
@@ -25,7 +26,18 @@ struct UserCompleteView: View {
     var body: some View {
         //usando il valore di request ora si dovrebbero fare le richieste con le api per avere username, recensioni e liste di colui che ha mandato la richiesta
         
-        Text(request)
+        ForEach(self.userInfo) {
+            user in
+            Text(user.username)
+        }
+        
+        Text("")
+            .onAppear() {
+                ApiUser().loadDataUser(num: request) {
+                    user in
+                    self.userInfo=user.results
+                }
+            }
 //        ForEach(userList.movies) { movie in
 //            Text(movie.id)
 //        }

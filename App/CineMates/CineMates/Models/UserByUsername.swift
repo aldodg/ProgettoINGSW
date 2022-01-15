@@ -112,6 +112,26 @@ class UserViewModel: ObservableObject {
     }
 }
 
+class ApiUser: ObservableObject{
+    @Published var user = PersonResults()
+
+    func loadDataUser(num: String, completion:@escaping (PersonResults) -> ()) {
+        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_idUser.php/info?id=\(num)")
+        else {
+            print("Invalid url...")
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            self.user = try! JSONDecoder().decode(PersonResults.self, from: data!)
+            print(self.user)
+            DispatchQueue.main.async {
+                completion(self.user)
+            }
+        }.resume()
+
+    }
+}
+
 //-------------------------------------------------
 
 //extension URLSession {
