@@ -10,11 +10,24 @@ import SwiftUI
 
 struct DetailListView: View {
     let userList: MovieList
-    var body: some View {
-        ForEach(userList.movies) { movie in
-            Text(movie.id)
+    
+    //var movie_name : MovieNameResponse
+    
+        var body: some View {
+            ForEach(userList.movies) { movie in
+                Text(movie.id)
+            }
         }
-    }
+//    var body: some View {
+//        ForEach(userList.movies) { movie in
+//            Text("")
+//                .onAppear() {
+//                    ApiMovieName().loadData (num: movie.id) {
+//                        name in self.movie_name = name.movieNameLists
+//                    }
+//                }
+//        }
+//    }
 }
 
 //struct DetailListView_Previews: PreviewProvider {

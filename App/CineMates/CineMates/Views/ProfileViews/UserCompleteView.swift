@@ -23,6 +23,9 @@ struct UserCompleteView: View {
     var body: some View {
         //usando il valore di request ora si dovrebbero fare le richieste con le api per avere username, recensioni e liste di colui che ha mandato la richiesta
         Text(request.id)
+//        ForEach(userList.movies) { movie in
+//            Text(movie.id)
+//        }
     }
 }
 

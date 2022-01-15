@@ -83,9 +83,13 @@ struct MovieID: Codable,Identifiable {
 
 class ApiList : ObservableObject{
     @Published var list = UserMovieListResponse()
+//    @Published var name : String  = ""
+//    @Published var data : String  = ""
     
-    func loadData(completion:@escaping (UserMovieListResponse) -> ()) {
-        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=1")
+    func loadData(num: Int, completion:@escaping (UserMovieListResponse) -> ()) {
+        
+//        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=1")
+        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=\(num)")
         //guard let url = URL(string: "http://localhost/cinemates/getList_idUser.php/info?id=1")
         else {
             print("Invalid url...")
@@ -100,4 +104,19 @@ class ApiList : ObservableObject{
         }.resume()
         
     }
+    
+//    func MovieName_idMovie (movieID: String) {
+//
+//        print("xxxx\(movieID)xxx")
+//        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getMovieName_idMovie.php/info?id=\(movieID)")
+//        else {
+//            print("Invalid url...")
+//            return
+//        }
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            let stringData = data! as! String
+//            print ("\(stringData)")
+//        }.resume()
+//
+//    }
 }

@@ -12,9 +12,12 @@ struct ListView: View {
     
     @State var userLists = [MovieList]()
     
+    let num = 1
+    //questo num e' ovviamente d'esempio, e' l'id dell'utente che chiama la funzione
+    
     var body: some View {
         ForEach(self.userLists) { userList in
-            NavigationLink(destination: DetailListView(userList: userList)){
+            NavigationLink(destination: DetailListView(userList: userList)) {
                 Text(userList.listName)
             }
         }
@@ -23,7 +26,7 @@ struct ListView: View {
         Text("")
             .padding()
             .onAppear() {
-                ApiList().loadData { (list) in
+                ApiList().loadData(num: num) { (list) in
                     self.userLists = list.movieLists
                 }
             }.navigationTitle("Lists")

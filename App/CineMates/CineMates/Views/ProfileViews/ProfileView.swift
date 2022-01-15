@@ -26,7 +26,7 @@ struct ProfileView: View {
                     Text("My Reviews")
                         .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                 }
-                .navigationTitle("Profile Page")
+                .navigationTitle("My Profile")
                 
             }
         }

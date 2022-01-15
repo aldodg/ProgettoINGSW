@@ -6,6 +6,9 @@ $query= "https://api.themoviedb.org/3/movie/".$id."?api_key=316933cd9b895a54e2bf
 $json = file_get_contents($query);
 //echo $json;
 $data = json_decode($json);
-echo $data->{'original_title'};
+//echo $data->{'original_title'};
+
+$json2=array("status" => 1, "info" => $data->{'original_title'});
+echo json_encode($json2);
 
 ?>

@@ -6,66 +6,112 @@
 ////  Copyright © 2022 Aldo Di Giovanni. All rights reserved.
 ////
 //
-//import Foundation
-//
-//// This file was generated from JSON Schema using quicktype, do not modify it directly.
-//// To parse the JSON, add this file to your project and do:
-////
-////   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
-//
-////
-//// To read values from URLs:
-////
-////   let task = URLSession.shared.welcomeTask(with: url) { welcome, response, error in
-////     if let welcome = welcome {
-////       ...
-////     }
-////   }
-////   task.resume()
-//
-//import Foundation
-//
-//// MARK: - Welcome
-//struct Welcome: Codable {
-//    let status: Int
-//    let info: [Info]
+import Foundation
+//-------------------------------------
+//enum FetchError: Error {
+//    case badURL
+//    case badResponse
 //}
 //
-////
-//// To read values from URLs:
-////
-////   let task = URLSession.shared.infoTask(with: url) { info, response, error in
-////     if let info = info {
-////       ...
-////     }
-////   }
-////   task.resume()
+//class StarWarsViewModel: ObservableObject {
+//    @Published var people = [Person]()
 //
-//// MARK: - Info
-//struct Info: Codable {
-//    let id, username, password, email: String
-//}
-//
-//// MARK: - Helper functions for creating encoders and decoders
-//
-//func newJSONDecoder() -> JSONDecoder {
-//    let decoder = JSONDecoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        decoder.dateDecodingStrategy = .iso8601
+//    init () {
+//        Task {
+//            people = try await getPeople()
+//        }
 //    }
-//    return decoder
-//}
 //
-//func newJSONEncoder() -> JSONEncoder {
-//    let encoder = JSONEncoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        encoder.dateEncodingStrategy = .iso8601
+//    func getPeople() async throws -> [Person] {
+//        guard let url=URL(string: "https://swapi.dev/api/people") else {
+//            throw FetchError.badURL
+//        }
+//        let urlRequest = URLRequest(url: url)
+//
+//        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+//        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+//            throw FetchError.badResponse
+//        }
+//        let maybePeopleData = try JSONDecoder().decode(PersonResults.self, from: data)
+//
+//        return maybePeopleData.results
 //    }
-//    return encoder
 //}
 //
-//// MARK: - URLSession response handlers
+//struct PersonResults: Decodable {
+//    var results: [Person]
+//}
+//struct Person: Decodable, Identifiable {
+//    var id = UUID()
+//    var name: String
 //
+//    enum CodingKeys: CodingKey {
+//        case name
+//    }
+//}
+
+// --------------------------------------------
+//
+
+enum FetchError: Error {
+    case badURL
+    case badResponse
+}
+
+struct PersonResults: Codable {
+    let status: Int
+    let results: [Person]
+    init() {
+        status = 1
+        results = []
+    }
+    enum CodingKeys: String, CodingKey {
+            case status
+            case results = "info"
+        }
+}
+// MARK: - Info
+struct Person: Codable, Identifiable {
+
+        let id, username, password, email: String
+
+
+//    enum CodingKeys: String, CodingKey {
+//        case userID = "id"
+//        case id = "id_review"
+//        case title, body, rating
+//        case idMovie = "id_movie"
+//    }
+}
+
+class UserViewModel: ObservableObject {
+    @Published var people = [Person]()
+
+    init () {
+        Task {
+            people = try await getPeople()
+        }
+    }
+
+    func getPeople() async throws -> [Person] {
+        //guard let url=URL(string: "https://swapi.dev/api/people") else {
+        guard let url=URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_username.php/info?username=accr0") else {
+            throw FetchError.badURL
+        }
+        let urlRequest = URLRequest(url: url)
+
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw FetchError.badResponse
+        }
+        let maybePeopleData = try JSONDecoder().decode(PersonResults.self, from: data)
+
+        return maybePeopleData.results
+    }
+}
+
+//-------------------------------------------------
+
 //extension URLSession {
 //    fileprivate func codableTask<T: Codable>(with url: URL, completionHandler: @escaping (T?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
 //        return self.dataTask(with: url) { data, response, error in
@@ -77,7 +123,55 @@
 //        }
 //    }
 //
-//    func welcomeTask(with url: URL, completionHandler: @escaping (Welcome?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+//    func UserByUsernameResponseTask(with url: URL, completionHandler: @escaping (UserResponse?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
 //        return self.codableTask(with: url, completionHandler: completionHandler)
 //    }
 //}
+//
+//struct UserResponse: Codable {
+//    let status: Int
+//    let userLists: [UserList]
+//    init() {
+//        status = 1
+//        userLists = []
+//    }
+//    enum CodingKeys: String, CodingKey {
+//            case status
+//            case userLists = "info"
+//        }
+//}
+//// MARK: - Info
+//struct UserList: Codable, Identifiable {
+//
+//        let id, username, password, email: String
+//
+//
+////    enum CodingKeys: String, CodingKey {
+////        case userID = "id"
+////        case id = "id_review"
+////        case title, body, rating
+////        case idMovie = "id_movie"
+////    }
+//}
+//
+//class ApiUser: ObservableObject{
+//    @Published var user = UserResponse()
+//
+//    func loadDataUser(completion:@escaping (UserResponse) -> ()) {
+//        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_username.php/info?username=accr0")
+//        //guard let url = URL(string: "http://localhost/cinemates/getList_idUser.php/info?id=1")
+//        else {
+//            print("Invalid url...")
+//            return
+//        }
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            self.user = try! JSONDecoder().decode(UserResponse.self, from: data!)
+//            print(self.user)
+//            DispatchQueue.main.async {
+//                completion(self.user)
+//            }
+//        }.resume()
+//
+//    }
+//}
+
