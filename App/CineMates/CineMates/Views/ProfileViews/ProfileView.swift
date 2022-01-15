@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State private var showLoginScreen = false
+
     var body: some View {
         NavigationView {
             VStack {
+                
                 NavigationLink(destination: FriendshipRequestView()) {
                     Text("Link Requests")
                         .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
@@ -26,8 +30,17 @@ struct ProfileView: View {
                     Text("My Reviews")
                         .padding().frame(width: 150.0, height: 50.0).background(Color.blue).foregroundColor(Color.white).cornerRadius(10)
                 }
-                .navigationTitle("My Profile")
-                
+            }
+            .navigationTitle("My Profile")
+            .onAppear {
+                if !AppDelegate.isUserLoggedIn {
+                    showLoginScreen.toggle()
+                }
+            }
+            
+            // Display Login screen
+            .fullScreenCover(isPresented: $showLoginScreen) {
+                LoginView()
             }
         }
     }

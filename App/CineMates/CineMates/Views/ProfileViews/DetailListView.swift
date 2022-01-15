@@ -21,7 +21,10 @@ struct DetailListView: View {
         }
     }
     
+    //    -------------------------------------------
+    
 //    var body: some View {
+//        //Text(movieDetail.name!)
 //
 //        Text((movieDetail.name==nil||error) ? "No movie found" : movieDetail.name!).onAppear() {
 //            ApiMovieName().loadData (num: userList.id) { movie,error in
@@ -35,6 +38,24 @@ struct DetailListView: View {
 //            }
 //        }
 //    }
+//}
+
+//    -------------------------------------------
+    
+//var body: some View {
+//
+//    Text((movieDetail.name==nil||error) ? "No movie found" : movieDetail.name!).onAppear() {
+//        ApiMovieName().loadData (num: userList.id) { movie,error in
+//
+//            if(error != nil || movie == nil){
+//                self.error = true
+//            }
+//            else{
+//                self.movieDetail = movie!
+//            }
+//        }
+//    }
+//}
 //}
 
 //struct DetailListView_Previews: PreviewProvider {
