@@ -66,46 +66,48 @@ struct PersonResults: Codable {
         results = []
     }
     enum CodingKeys: String, CodingKey {
-            case status
-            case results = "info"
-        }
+        case status
+        case results = "info"
+    }
 }
 // MARK: - Info
 struct Person: Codable, Identifiable {
-
-        let id, username, password, email: String
-
-
-//    enum CodingKeys: String, CodingKey {
-//        case userID = "id"
-//        case id = "id_review"
-//        case title, body, rating
-//        case idMovie = "id_movie"
-//    }
+    
+    let id, username, password, email: String
+    
+    
+    //    enum CodingKeys: String, CodingKey {
+    //        case userID = "id"
+    //        case id = "id_review"
+    //        case title, body, rating
+    //        case idMovie = "id_movie"
+    //    }
 }
 
 class UserViewModel: ObservableObject {
     @Published var people = [Person]()
-
+    
     init () {
         Task {
             people = try await getPeople()
         }
     }
-
+    
     func getPeople() async throws -> [Person] {
         //guard let url=URL(string: "https://swapi.dev/api/people") else {
-        guard let url=URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_username.php/info?username=accr0") else {
+        //guard let url=URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getUser_username.php/info?username=accr0") else {
+        guard let url=URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getAllUser.php") else {
+            
             throw FetchError.badURL
         }
         let urlRequest = URLRequest(url: url)
-
+        
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             throw FetchError.badResponse
         }
         let maybePeopleData = try JSONDecoder().decode(PersonResults.self, from: data)
-
+        
         return maybePeopleData.results
     }
 }

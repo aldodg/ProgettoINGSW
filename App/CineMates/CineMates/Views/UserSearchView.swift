@@ -36,12 +36,14 @@ struct UserSearchView: View {
     }
     
     var body: some View {
+        
         List(filteredPeople) {
             person in
             Text(person.username)
         }
         .navigationTitle("Search")
-        .searchable(text: $searchText)
+        //SENZA PLACEMENT NASCONDE LA BARRA DI RICERCA E PER FARLA COMPARIRE DEVO FARE SCROLL IN BASSO --BUG DI LINGUAGGIO
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
     }
 }
 //    -------------------------------
