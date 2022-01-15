@@ -11,6 +11,7 @@ import SwiftUI
 struct ReviewView: View {
     
     @State var reviewLists = [ReviewList]()
+    @State var error = false
     
     let num = "1"
     //questo num e' ovviamente d'esempio, e' l'id dell'utente che chiama la funzione
@@ -23,12 +24,17 @@ struct ReviewView: View {
             }
         }
         
+        Text(error ? "Loading error" : "")
         
         Text("")
             .padding()
             .onAppear() {
-                ApiReview().loadDataReview(num: num) { (list) in
-                    self.reviewLists = list.reviewLists
+                ApiReview().loadDataReview(num: num) { list,error  in
+                    guard error == nil else {
+                        self.error = true
+                        return
+                    }
+                    self.reviewLists = list!.reviewLists
                 }
             }.navigationTitle("Reviews")
     }

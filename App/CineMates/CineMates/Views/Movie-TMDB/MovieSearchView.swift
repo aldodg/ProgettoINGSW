@@ -27,29 +27,29 @@ struct MovieSearchView: View {
     }
     
     @ViewBuilder
-    private var overlayView: some View {
-        switch movieSearchState.phase {
-            
-        case .empty:
-            if movieSearchState.trimmedQuery.isEmpty {
-                EmptyPlaceholderView(text: "Search your favorite movie", image: Image(systemName: "magnifyingglass"))
-            } else {
-                ProgressView()
-            }
-            
-        case .success(let values) where values.isEmpty:
-            EmptyPlaceholderView(text: "No results", image: Image(systemName: "film"))
-            
-        case .failure(let error):
-            RetryView(text: error.localizedDescription, retryAction: {
-                Task {
-                    await movieSearchState.search(query: movieSearchState.query)
+        private var overlayView: some View {
+            switch movieSearchState.phase {
+                
+            case .empty:
+                if movieSearchState.trimmedQuery.isEmpty {
+                    EmptyPlaceholderView(text: "Search your favorite movie", image: Image(systemName: "magnifyingglass"))
+                } else {
+                    ProgressView()
                 }
-            })
-            
-        default: EmptyView()
+                
+            case .success(let values) where values.isEmpty:
+                EmptyPlaceholderView(text: "No results", image: Image(systemName: "film"))
+                
+            case .failure(let error):
+                RetryView(text: error.localizedDescription, retryAction: {
+                    Task {
+                        await movieSearchState.search(query: movieSearchState.query)
+                    }
+                })
+                
+            default: EmptyView()
+            }
         }
-    }
     
 }
 

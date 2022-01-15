@@ -27,10 +27,10 @@ extension URLSession {
 // MARK: - List
 struct MovieNameResponse: Codable {
     let status: Int
-    let movieNameLists: String
+    let movieNameLists: [MovieName]?
     init() {
         status = 1
-        movieNameLists = ""
+        movieNameLists = []
     }
     enum CodingKeys: String, CodingKey {
             case status
@@ -38,20 +38,50 @@ struct MovieNameResponse: Codable {
         }
 }
 
-class ApiMovieName : ObservableObject{
-    @Published var movieName = MovieNameResponse()
+struct IdToMovieNameResponse: Codable {
+    let status: Int
+    let name: String?
+    init() {
+        status = 1
+        name = ""
+    }
+    enum CodingKeys: String, CodingKey {
+            case status
+            case name = "info"
+        }
+}
+
+struct MovieName: Codable, Identifiable {
+    let id: String
     
-    func loadData(num: String, completion:@escaping (MovieNameResponse) -> ()) {
+//    enum CodingKeys: String, CodingKey {
+//        case id = "name"
+//    }
+    
+}
+
+class ApiMovieName : ObservableObject{
+    @Published var movieNameResponse = IdToMovieNameResponse()
+    
+    func loadData(num: String, completion:@escaping (IdToMovieNameResponse?,Error?) -> ()) {
         guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getMovieName_idMovie.php/info?id=\(num)")
         else {
             print("Invalid url...")
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            self.movieName = try! JSONDecoder().decode(MovieNameResponse.self, from: data!)
-            print(self.movieName)
-            DispatchQueue.main.async {
-                completion(self.movieName)
+            do{
+                self.movieNameResponse = try JSONDecoder().decode(IdToMovieNameResponse.self, from: data!)
+                DispatchQueue.main.async {
+                    completion(self.movieNameResponse,nil)
+                }
+            }
+            //If the decode fail, return the empty movie name
+            catch{
+                DispatchQueue.main.async {
+                    print("Failure, cause: \(error) from url: \(url)")
+                    completion(nil,error)
+                }
             }
         }.resume()
         

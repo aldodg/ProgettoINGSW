@@ -68,7 +68,7 @@ struct ReviewList: Codable, Identifiable {
 class ApiReview : ObservableObject{
     @Published var review = ReviewResponse()
     
-    func loadDataReview(num: String, completion:@escaping (ReviewResponse) -> ()) {
+    func loadDataReview(num: String, completion:@escaping (ReviewResponse?,Error?) -> ()) {
         guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getReview_idUser.php/info?id=\(num)")
         //guard let url = URL(string: "http://localhost/cinemates/getList_idUser.php/info?id=1")
         else {
@@ -76,10 +76,15 @@ class ApiReview : ObservableObject{
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            self.review = try! JSONDecoder().decode(ReviewResponse.self, from: data!)
-            print(self.review)
-            DispatchQueue.main.async {
-                completion(self.review)
+            do{
+                self.review = try JSONDecoder().decode(ReviewResponse.self, from: data!)
+                print(self.review)
+                DispatchQueue.main.async {
+                    completion(self.review, nil)
+                }
+            }
+            catch{
+                completion(nil,error)
             }
         }.resume()
         

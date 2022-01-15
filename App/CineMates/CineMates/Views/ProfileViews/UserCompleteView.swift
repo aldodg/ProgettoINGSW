@@ -17,7 +17,10 @@ import SwiftUI
 struct UserCompleteView: View {
     let request: String
 
+    @State var error = false
     @State var userInfo = [Person]()
+    @State var reviewLists = [ReviewList]()
+    @State var userLists = [MovieList]()
     
     //request qua sopra indica l'utente che ci ha mandato la richiesta di amicizia che stiamo prendendo in considerazione
     //e' in pratica la chiave id1 della tabella sul db, perche' e' pensato come id1 manda richiesta a id2
@@ -30,12 +33,42 @@ struct UserCompleteView: View {
             user in
             Text(user.username)
         }
+        ForEach(self.reviewLists) { reviewList in
+            NavigationLink(destination: DetailReviewView(reviewList: reviewList)){
+                //qua mettere titolo film con api relativa(?)
+                Text(reviewList.title)
+            }
+        }
+        ForEach(self.userLists) { userList in
+            NavigationLink(destination: DetailListView(userList: userList)) {
+                Text(userList.listName)
+            }
+        }
         
         Text("")
             .onAppear() {
                 ApiUser().loadDataUser(num: request) {
                     user in
                     self.userInfo=user.results
+                }
+            }
+            .onAppear() {
+                ApiReview().loadDataReview(num: request) {
+                    user,err  in
+                    guard user != nil else {
+                        self.error = true
+                        return
+                    }
+                    self.reviewLists = user!.reviewLists
+                }
+            }
+            .onAppear() {
+                ApiList().loadData (num: request) {
+                    user,error  in
+                    if(error == nil){
+                        self.userLists=user.movieLists
+                    }
+                    self.error = true
                 }
             }
 //        ForEach(userList.movies) { movie in

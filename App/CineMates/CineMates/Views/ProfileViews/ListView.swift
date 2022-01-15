@@ -11,8 +11,9 @@ import SwiftUI
 struct ListView: View {
     
     @State var userLists = [MovieList]()
-    
-    let num = 1
+    @State var error = false
+
+    let num = "1"
     //questo num e' ovviamente d'esempio, e' l'id dell'utente che chiama la funzione
     
     var body: some View {
@@ -26,8 +27,13 @@ struct ListView: View {
         Text("")
             .padding()
             .onAppear() {
-                ApiList().loadData(num: num) { (list) in
-                    self.userLists = list.movieLists
+                ApiList().loadData(num: num) { list,error  in
+                    if(error == nil){
+                        self.userLists = list.movieLists
+                    }
+                    else{
+                        self.error = true
+                    }
                 }
             }.navigationTitle("Lists")
     }

@@ -86,7 +86,7 @@ class ApiList : ObservableObject{
 //    @Published var name : String  = ""
 //    @Published var data : String  = ""
     
-    func loadData(num: Int, completion:@escaping (UserMovieListResponse) -> ()) {
+    func loadData(num: String, completion:@escaping (UserMovieListResponse,Error?) -> ()) {
         
 //        guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=1")
         guard let url = URL(string: "http://ec2-3-250-182-218.eu-west-1.compute.amazonaws.com/getList_idUser.php/?id=\(num)")
@@ -96,10 +96,15 @@ class ApiList : ObservableObject{
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
-            self.list = try! JSONDecoder().decode(UserMovieListResponse.self, from: data!)
-            print(self.list)
-            DispatchQueue.main.async {
-                completion(self.list)
+            do{
+                self.list = try JSONDecoder().decode(UserMovieListResponse.self, from: data!)
+                print(self.list)
+                DispatchQueue.main.async {
+                    completion(self.list,nil)
+                }
+            }
+            catch{
+                completion(UserMovieListResponse(),error)
             }
         }.resume()
         
