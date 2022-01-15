@@ -39,7 +39,9 @@ struct UserSearchView: View {
         
         List(filteredPeople) {
             person in
-            Text(person.username)
+            NavigationLink(destination: UserCompleteView(request: person.id)) {
+                Text(person.username)
+            }
         }
         .navigationTitle("Search")
         //SENZA PLACEMENT NASCONDE LA BARRA DI RICERCA E PER FARLA COMPARIRE DEVO FARE SCROLL IN BASSO --BUG DI LINGUAGGIO

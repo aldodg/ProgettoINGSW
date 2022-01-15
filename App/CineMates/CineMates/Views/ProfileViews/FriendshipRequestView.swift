@@ -14,7 +14,7 @@ struct FriendshipRequestView: View {
     
     var body: some View {
         ForEach(self.friendshipRequests) { request in
-            NavigationLink(destination: UserCompleteView(request: request)){
+            NavigationLink(destination: UserCompleteView(request: request.id)){
                 //qua mettere username e bottoni per accettare o rifiutare
                 Text(request.id)
             }

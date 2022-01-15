@@ -15,14 +15,17 @@ import SwiftUI
 //singoli di questi ultimi due richiamando le api apposite e non quella grossa di userComplete!!
 
 struct UserCompleteView: View {
-    let request: FriendshipRequest
+    let request: String
+//    let personID: PersonResults
+    
     //request qua sopra indica l'utente che ci ha mandato la richiesta di amicizia che stiamo prendendo in considerazione
     //e' in pratica la chiave id1 della tabella sul db, perche' e' pensato come id1 manda richiesta a id2
     //e in questo caso id2 e' l'id nostro, che stiamo vedendo quali richieste sono arrivate
     //nel model questo id1 e' indicato semplicemente con id per far andare il foreach
     var body: some View {
         //usando il valore di request ora si dovrebbero fare le richieste con le api per avere username, recensioni e liste di colui che ha mandato la richiesta
-        Text(request.id)
+        
+        Text(request)
 //        ForEach(userList.movies) { movie in
 //            Text(movie.id)
 //        }
