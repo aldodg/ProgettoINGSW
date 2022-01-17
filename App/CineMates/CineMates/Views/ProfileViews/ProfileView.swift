@@ -7,10 +7,13 @@
 //
 
 import SwiftUI
+import NetworkLibrary
 
 struct ProfileView: View {
     
     @State private var showLoginScreen = false
+//    let nm = NetworkManager(session: URLSession.shared)
+//    let viewModel = LoginViewModel(networkManager: nm)
 
     var body: some View {
         NavigationView {
@@ -40,6 +43,7 @@ struct ProfileView: View {
             
             // Display Login screen
             .fullScreenCover(isPresented: $showLoginScreen) {
+                //LoginView(viewModel: viewModel)
                 LoginView()
             }
         }

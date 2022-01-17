@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MovieDetailView: View {
     
-    let movieId: Int
-    let movieTitle: String
+    @State var movieId: Int
+    @State var movieTitle: String
     @StateObject private var movieDetailState = MovieDetailState()
     @State private var selectedTrailerURL: URL?
     
@@ -32,6 +32,11 @@ struct MovieDetailView: View {
         )
         .sheet(item: $selectedTrailerURL) { SafariView(url: $0).edgesIgnoringSafeArea(.bottom)}
         .navigationTitle(movieTitle)
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing){
+                NavigationLink(destination: AddReview(movieTitle: $movieTitle, movieId: $movieId)){Text("Add Review")}
+            }
+        }
     }
     
     @Sendable

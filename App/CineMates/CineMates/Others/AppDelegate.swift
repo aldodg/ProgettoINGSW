@@ -10,7 +10,7 @@ import UIKit
 @UIApplicationMain
  class AppDelegate: UIResponder, UIApplicationDelegate {
 
-     static var isUserLoggedIn = false
+    static var isUserLoggedIn = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UITableView.appearance().separatorStyle = .none

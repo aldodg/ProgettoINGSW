@@ -19,7 +19,16 @@ struct FriendshipRequestView: View {
         ForEach(self.friendshipRequests) { request in
             NavigationLink(destination: UserCompleteView(request: request.id)){
                 //qua mettere username e bottoni per accettare o rifiutare
-                Text(request.id)
+                HStack (spacing:50){
+                    Text(request.id)
+                        
+                    Button ("Accetta") {
+                        //chiamata api con par 1 --update
+                    }
+                    Button ("Rifiuta") {
+                        //chiamata api con codice 2 --delete
+                    }
+                }
             }
             
         }

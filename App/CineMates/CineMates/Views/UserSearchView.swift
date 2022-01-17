@@ -50,29 +50,6 @@ struct UserSearchView: View {
 }
 //    -------------------------------
 
-//    @State private var searchText = ""
-//    @ObservedObject var swVM = StarWarsViewModel()
-//
-//    var filteredPeople: [Person] {
-//        if searchText == "" {
-//            return swVM.people
-//        }
-//        return swVM.people.filter {
-//            $0.name.lowercased().contains(searchText.lowercased())
-//        }
-//    }
-//
-//    var body: some View {
-//            List(filteredPeople) {
-//                person in
-//                Text(person.name)
-//            }
-//            .navigationTitle("Star Wars")
-//            .searchable(text: $searchText)
-//    }
-//}
-//------------------------------
-
 struct UserSearchView_Previews: PreviewProvider {
     static var previews: some View {
         UserSearchView()

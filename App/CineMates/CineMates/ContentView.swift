@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NetworkLibrary
 
 struct ContentView: View {
     var body: some View {

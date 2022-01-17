@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		560A5E8B278E616B00EF3FF5 /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5E8A278E616B00EF3FF5 /* DetailListView.swift */; };
 		560A5E8D278E83E600EF3FF5 /* DetailReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5E8C278E83E600EF3FF5 /* DetailReviewView.swift */; };
 		560A5E8F278E930100EF3FF5 /* UserCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560A5E8E278E930100EF3FF5 /* UserCompleteView.swift */; };
+		564824692794CB6A0068E13F /* postReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564824682794CB6A0068E13F /* postReview.swift */; };
 		567A72DB2793559E0042E5D3 /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A72DA2793559E0042E5D3 /* UserRegistration.swift */; };
 		567A72DD279356680042E5D3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A72DC279356680042E5D3 /* LoginView.swift */; };
 		568E1BBE277A91420081F50B /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BBD277A91420081F50B /* UserSearchView.swift */; };
@@ -23,6 +24,8 @@
 		568E1BEA2787C0160081F50B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BE92787C0160081F50B /* Review.swift */; };
 		568E1BEC2787C0640081F50B /* UserByUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E1BEB2787C0640081F50B /* UserByUsername.swift */; };
 		56B8795B2791B759003CB5FE /* MovieName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8795A2791B759003CB5FE /* MovieName.swift */; };
+		56BDB40A2794CD23007D3E85 /* AddReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BDB4092794CD23007D3E85 /* AddReview.swift */; };
+		56E87D00279372190048F03A /* NetworkLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 56E87CFF279372190048F03A /* NetworkLibrary */; };
 		8B755F0E247936D300FD58C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B755F0D247936D300FD58C8 /* AppDelegate.swift */; };
 		8B755F10247936D300FD58C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B755F0F247936D300FD58C8 /* SceneDelegate.swift */; };
 		8B755F12247936D300FD58C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B755F11247936D300FD58C8 /* ContentView.swift */; };
@@ -62,6 +65,7 @@
 		560A5E8A278E616B00EF3FF5 /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
 		560A5E8C278E83E600EF3FF5 /* DetailReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReviewView.swift; sourceTree = "<group>"; };
 		560A5E8E278E930100EF3FF5 /* UserCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCompleteView.swift; sourceTree = "<group>"; };
+		564824682794CB6A0068E13F /* postReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postReview.swift; sourceTree = "<group>"; };
 		567A72DA2793559E0042E5D3 /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		567A72DC279356680042E5D3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		568E1BBD277A91420081F50B /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		568E1BE92787C0160081F50B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		568E1BEB2787C0640081F50B /* UserByUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserByUsername.swift; sourceTree = "<group>"; };
 		56B8795A2791B759003CB5FE /* MovieName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieName.swift; sourceTree = "<group>"; };
+		56BDB4092794CD23007D3E85 /* AddReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReview.swift; sourceTree = "<group>"; };
 		8B755F0A247936D300FD58C8 /* Cinemates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinemates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B755F0D247936D300FD58C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B755F0F247936D300FD58C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E87D00279372190048F03A /* NetworkLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +150,7 @@
 				8B755F2B24793BF400FD58C8 /* Movie+Stub.swift */,
 				8BF90B5E272E42ED001E978D /* DataFetchPhase.swift */,
 				8BF90B67272E47CA001E978D /* MovieSection.swift */,
+				564824682794CB6A0068E13F /* postReview.swift */,
 			);
 			path = TMDB;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 				8B755F4724796B8200FD58C8 /* LoadingView.swift */,
 				8BE793F52479FD1000850C45 /* MovieDetailView.swift */,
 				8BF4147C247A37A800F5BE68 /* MovieSearchView.swift */,
+				56BDB4092794CD23007D3E85 /* AddReview.swift */,
 			);
 			path = "Movie-TMDB";
 			sourceTree = "<group>";
@@ -308,6 +316,9 @@
 			dependencies = (
 			);
 			name = Cinemates;
+			packageProductDependencies = (
+				56E87CFF279372190048F03A /* NetworkLibrary */,
+			);
 			productName = SwiftUIMovieDb;
 			productReference = 8B755F0A247936D300FD58C8 /* Cinemates.app */;
 			productType = "com.apple.product-type.application";
@@ -336,6 +347,9 @@
 				Base,
 			);
 			mainGroup = 8B755F01247936D300FD58C8;
+			packageReferences = (
+				56E87CFE279372180048F03A /* XCRemoteSwiftPackageReference "NetworkManager" */,
+			);
 			productRefGroup = 8B755F0B247936D300FD58C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +391,7 @@
 				567A72DD279356680042E5D3 /* LoginView.swift in Sources */,
 				8B755F0E247936D300FD58C8 /* AppDelegate.swift in Sources */,
 				8B755F4824796B8200FD58C8 /* LoadingView.swift in Sources */,
+				56BDB40A2794CD23007D3E85 /* AddReview.swift in Sources */,
 				8B755F10247936D300FD58C8 /* SceneDelegate.swift in Sources */,
 				8B755F3D2479524600FD58C8 /* MovieThumbnailView.swift in Sources */,
 				568E1BC0277A93220081F50B /* ProfileView.swift in Sources */,
@@ -409,6 +424,7 @@
 				8B755F262479377300FD58C8 /* MovieService.swift in Sources */,
 				8B755F3F247956D000FD58C8 /* MovieThumbnailCarouselView.swift in Sources */,
 				568E1BD4277BCC680081F50B /* FriendshipRequestView.swift in Sources */,
+				564824692794CB6A0068E13F /* postReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +620,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56E87CFE279372180048F03A /* XCRemoteSwiftPackageReference "NetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stevencurtis/NetworkManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56E87CFF279372190048F03A /* NetworkLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56E87CFE279372180048F03A /* XCRemoteSwiftPackageReference "NetworkManager" */;
+			productName = NetworkLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B755F02247936D300FD58C8 /* Project object */;
 }
