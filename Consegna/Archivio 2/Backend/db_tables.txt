@@ -1,0 +1,117 @@
+#id sarebbe id di un user
+
+create database cinematesdb;
+
+use cinematesdb;
+
+CREATE TABLE user (
+id INT NOT NULL AUTO_INCREMENT,
+username VARCHAR(45) NOT NULL,
+password VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL,
+#avatar ma è un poco un casino 
+PRIMARY KEY (id))
+ENGINE = InnoDB;
+
+#bottone frontend, se I due tizi sono già amici esce amici, altrimenti invia richiesta
+CREATE TABLE friendship (
+id1 INT NOT NULL,
+id2 INT NOT NULL,
+id_friendship INT NOT NULL AUTO_INCREMENT,
+#blocked e' un nice to have, se ho tempo lo implemento
+state ENUM  ('pending' , 'accepted', 'blocked') NOT NULL,
+FOREIGN KEY (id1) REFERENCES user(id),
+FOREIGN KEY (id2) REFERENCES user(id),
+PRIMARY KEY (id_friendship));
+
+CREATE TABLE review (
+id INT NOT NULL,
+id_review INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(45) NOT NULL,
+body text NOT NULL,
+rating FLOAT NOT NULL,
+FOREIGN KEY (id) REFERENCES user(id),
+PRIMARY KEY (id_review));
+
+CREATE TABLE report (
+id_report INT NOT NULL AUTO_INCREMENT,
+id_review INT NOT NULL,
+FOREIGN KEY (id_review) REFERENCES review (id_review),
+PRIMARY KEY (id_report));
+
+#non mi serve più notification, controllo per chiavi utrenti and pending in friendship
+/*
+CREATE TABLE notification (
+id_notification INT NOT NULL AUTO_INCREMENT,
+id INT NOT NULL,
+id_friendship INT NOT NULL,
+FOREIGN KEY (id_friendship) REFERENCES friendship (id_friendship),
+FOREIGN KEY (id) REFERENCES user (id),
+PRIMARY KEY (id_notification));
+*/
+
+CREATE TABLE list (
+id_list INT NOT NULL AUTO_INCREMENT,
+id INT NOT NULL,
+list_name VARCHAR(45) NOT NULL,
+FOREIGN KEY (id) REFERENCES user (id),
+PRIMARY KEY (id_list));
+
+
+insert into user(username, password, email) values 
+("accr0", "psw", "accro@gmail.com"),
+("ocram", "123", "marco@gmail.com"),
+("lucy", "lucia81", "lucia@libero.com"),
+("emilia", "e.punto", "emilia@icloud.com"),
+("edo", "eddoardo", "edo@alice.it");
+
+#amico con Emilia e lucia, richiesta da ocram per accr0
+insert into friendship(id1, id2, state) values 
+("1", "4", "accepted"),
+("2", "1", "pending"),
+("3", "1", "accepted");
+
+alter table list add movies text;
+
+insert into list (id, list_name, movies) values 
+("4", "preferiti", "313369, 152601, 4347"),
+("1", "preferiti", "78, 164, 671");
+
+#non devo gestire admin quindi esempio in report inutile
+
+alter table review add id_movie int;
+alter table review change title title varchar(150);
+
+#house of Gucci e vi presento joe black inserita da accr0, espiazione da Emilia
+
+insert into review (id, title, body, rating, id_movie) values 
+("1",  "Interesting story on the Gucci family but film is uneven and long.", "House of Gucci is a fair biographical crime drama film that gives an insight on the greed, scandal, and betrayal with the Gucci family. Basically, the high fashion design company that we know today that is worth billions.
+
+Good story. Adam Driver did a fantastic job with his role and Lady Gaga aiming for award winning performance. Playing his wife who has been planting ideas on his head that caused him to betray his family for the power of the company. Jared Leto also did a fantastic job playing the incompetent cousin in the family and unrecognizable role.
+
+The film tries to be fun with playing a 70/80s soundtrack. Showing a biographical story on the Gucci family. The film does run a little too long with its run times. And the direction is uneven with its tone.
+
+Overall great performances from the cast and story.", "7", "644495"),
+
+("1", "Captivating commentary on love, life and death", "The Grim Reaper (i.e. the Angel of Death) comes to take billionaire industrialist Bill Parrish (Anthony Hopkins) but instead decides to take a holiday in the corporeal universe by possessing the body of a young man (Brad Pitt). Death's deal with Parrish is that, as long as he's entertained, he'll delay Bill's death. Mr. Death materializes as a mysterious stranger with child-like qualities known as 'Joe Black.' His holiday is complicated when he falls for Parrish's daughter (Claire Forlani).
+
+Meet Joe Black (1998) is a re-imagining of the 1934 film Death Takes a Holiday (which I've never seen). It has the confidence to take its time at almost 3 hours, but is so captivating that it feels shorter than most 90-minute mindless flicks. The plot is reminiscent of other good fish out of water stories like Spock in Star Trek, Starman (1984), etc.
+
+Yes, it's outlandish but the film expertly presents the bizarre situation in a totally believable manner. In other words, this is indeed a serious drama, which nicely balances out the heavy moments with lighter touches. I would compare it to The Green Mile (1999), another long drama with supernatural touches and wholly captivating.
+
+Despite its fantastical premise, Meet Joe Black consistently offers profound insights to the most vital topics of the human experience - love, life, death and numerous others, e.g. betrayal, rivalry, hostility, comeuppance and the mysterious beyond. One good example is when Parrish's son-in-law (Jeffrey Tambor) offers a definition of love to Joe Black: To know the worst thing about someone and it's okay, presuming they're penitent. This is just one example; the film is filled with such insights.
+
+Meet Joe Black cost $90 million to make and only made half of it back at the USA box office. Fortunately it has gone on to garner an enthusiastic following and rightly so 'cause this is a near-masterpiece of filmmaking and genuinely moving. I consider myself a masculine man, but tears flowed through approximately 1/3 of the runtime. This is a sign of a potent and affecting picture.
+
+It's a travesty that dreck like Pirates of the Caribbean makes gazillions of dollars and garbage like American Beauty are hailed as masterpieces while true gems like Joe Black are often overlooked. The good thing is that time was on Joe Black's side. The word got out.
+", "7", "297"),
+
+("4", "Beautiful and moving", "What a film! Entirely unpredictable - and utterly compelling - ATONEMENT is a breath of fresh air amid the countless stale remakes, sequels and juvenile comedies that have been filling our multiplexes as of late.
+
+I haven't read McEwan's book, but from the trailers to this film I expected a romance. I got it, but also a lot more besides. It's as if a traditional romantic movie has been injected with a massive dose of realism to bring it into the real world, with not always happy results.
+
+One or two plot contrivances aside, I was compelled by every minute of this production. I also saw two actors, McAvoy and Knightley, give fine, subtle performances that I hadn't witnessed in either of them before. Especially Knightley, who I usually see playing simpering characters in the likes of those pirate films.
+
+Joe Wright - who also directed Knightley in the 2005 PRIDE AND PREJUDICE adaptation - does a brilliant job of getting the tone and mood just right. His five-minute tracking shot of the Dunkirk beaches is breathtaking and on par with those seen recently in CHILDREN OF MEN and WARRIOR KING.
+
+Kudos too for the inclusion of some unreliable narration in the latter stages, something films usually avoid in fear of alienating viewers. It works perfectly here.", "9",  "4347");

@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20220915T080000Z
+DTEND:20220915T100000Z
+DTSTAMP:20220907T154726Z
+ORGANIZER;CN=accro997@gmail.com:mailto:accro997@gmail.com
+UID:6otsm9s0e8uefragh0h7kfgjab@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=digiovannialdons@gmail.com;X-NUM-GUESTS=0:mailto:digiovannialdons@g
+ mail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=accro997@gmail.com;X-NUM-GUESTS=0:mailto:accro997@gmail.com
+X-GOOGLE-CONFERENCE:https://meet.google.com/aeg-yrsz-htj
+X-MICROSOFT-CDO-OWNERAPPTID:-1122165348
+CREATED:20220907T154500Z
+DESCRIPTION:Buonasera Professore\,\nsono Aldo Di Giovanni e la mia matricol
+ a è N86002319.\n\nCon la presente\, come da istruzioni\, chiedo la possibil
+ ità di\npresentare il progetto di Ingegneria del Software (vecchio\nordinam
+ ento)\; in allegato troverà l'invito in formato ICS per il\ngiorno Giovedì 
+ 15 Settembre\, in orario di ricevimento.\n\nSperando di non arrecare distur
+ bo alcuno\, auguro una buona giornata e\nporgo cordiali saluti.\n\n-::~:~::
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:
+ ~::-\nPartecipa: https://meet.google.com/aeg-yrsz-htj\n\nVisualizza il tuo 
+ evento in https://calendar.google.com/calendar/event?action=VIEW&eid=Nm90c2
+ 05czBlOHVlZnJhZ2gwaDdrZmdqYWIgZGlnaW92YW5uaWFsZG9uc0Bt&tok=MTgjYWNjcm85OTdA
+ Z21haWwuY29tOThjY2FlYTczOTMyMDg3MGZmYzcwNTRhZjVlZTUxZTA5OTliY2M4OA&ctz=Euro
+ pe%2FRome&hl=it&es=1.\n\nNon modificare questa sezione della descrizione.\n
+ -::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~
+ :~:~::~:~::-
+LAST-MODIFIED:20220907T154723Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:[INGSW2021] Presentazione Progetto vecchio ordinamento INGSW2021_S_
+ 08
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

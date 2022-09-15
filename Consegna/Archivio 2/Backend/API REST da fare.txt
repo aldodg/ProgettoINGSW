@@ -1,0 +1,22 @@
+GET
+
+-utenti cercando per username: lista id utenti //fatta
+-utenti cercando per id utente: info utente, recensioni inserite, liste create //fatta
+-scheda film per titolo: scheda film //fatta
+-scheda film per id film: scheda film //fatta
+-review parsing by user id: review //fatta
+-list parsing by user id: list //fatta
+-friendship requests parsing by user id: user id list //fatta
+
+
+
+--------------------------------------
+
+POST
+
+-signup
+-login
+-send friendship request //fatta
+-send review //fatta
+-add a report //fatta
+-answer to a friendship request //fatta
